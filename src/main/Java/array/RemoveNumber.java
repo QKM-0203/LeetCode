@@ -7,6 +7,7 @@ public class RemoveNumber {
 
     public static int remove(int[] num,int target) {
         int slow = 0;
+        //slow和fast都指向不等于的target的点
         for (int fast = 0; fast < num.length; fast++) {
             if (num[fast] != target) {
                 num[slow++] = num[fast];
