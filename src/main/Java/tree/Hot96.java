@@ -1,4 +1,4 @@
-package Tree;
+package tree;
 
 /**
  * 多少种不同的二叉搜索树
