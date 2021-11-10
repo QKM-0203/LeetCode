@@ -1,5 +1,5 @@
 package array;
-//二分查找递归和循环
+
 public class Dichotomy {
     public static int dichotomyRecursion(int[] array, int i, int j, int target) {
         if (i > j) {
