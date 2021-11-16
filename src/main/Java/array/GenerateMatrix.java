@@ -1,6 +1,6 @@
 package array;
 
-//Spiral matrix
+//spiral matrix print
 public class GenerateMatrix {
     public static int[][] generateMatrix(int n) {
         int[][] nums = new int[n][n];
