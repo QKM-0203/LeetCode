@@ -2,6 +2,33 @@ package array;
 
 //spiral matrix print
 public class GenerateMatrix {
+    public static int[][] generateMatrixEasyToUnderstand(int n) {
+        int[][] nums = new int[n][n];
+        int top = 0, down = n - 1, left = 0, right = n - 1, number = 1;
+        while (left <= right && top <= down) {
+            for (int column = left; column <= right; column++) {
+                nums[top][column] = number++;
+            }
+            for (int row = top + 1; row <= down; row++) {
+                nums[row][right] = number++;
+            }
+            for (int column = right - 1; column > left; column--) {
+                nums[down][column] = number++;
+            }
+            for (int row = down; row > top; row--) {
+                nums[row][left] = number++;
+            }
+            top++;
+            left++;
+            down--;
+            right--;
+        }
+        if (n % 2 != 0) {
+            nums[n / 2][n / 2] = n * n;
+        }
+        return nums;
+    }
+
     public static int[][] generateMatrix(int n) {
         int[][] nums = new int[n][n];
         int up = 0, right = n - 1, down = n - 1, left = 0;
@@ -46,5 +73,6 @@ public class GenerateMatrix {
 
     public static void main(String[] args) {
         GenerateMatrix.print(GenerateMatrix.generateMatrix(5));
+        GenerateMatrix.print(GenerateMatrix.generateMatrixEasyToUnderstand(5));
     }
 }
