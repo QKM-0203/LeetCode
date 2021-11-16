@@ -1,7 +1,7 @@
 package linkedlist;
 
 /**
- * 合并个升序链表
+ * Merge ascending linked list
  */
 class ListNode {
     int val;
@@ -20,7 +20,7 @@ class ListNode {
     }
 }
 
-public class Hot23 {
+public class MergeAscendingLinkedList {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode pc = new ListNode();
         ListNode p = pc;

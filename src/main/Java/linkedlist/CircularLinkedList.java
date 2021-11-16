@@ -1,9 +1,9 @@
 package linkedlist;
 
 /**
- * 环形链表
+ * Circular linked list
  */
-public class Hot142 {
+public class CircularLinkedList {
     public ListNode detectCycle(ListNode head) {
         if (head == null) return null;
         ListNode slow = head;
@@ -18,6 +18,7 @@ public class Hot142 {
         p.next = head;
         while (p != slow) {
             p = p.next;
+            assert slow != null;
             slow = slow.next;
         }
         return p;
