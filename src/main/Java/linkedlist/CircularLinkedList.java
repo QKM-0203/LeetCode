@@ -1,26 +1,26 @@
 package linkedlist;
-
 /**
- * Circular linked list
+ * CircularLinkedList
+ * <p>when finding the node where the fast and slow nodes meet, the ring entrance is obtained by equal
+ * distances from the head node to the ring entrance and from the meeting node to the ring entrance</p>
  */
 public class CircularLinkedList {
     public ListNode detectCycle(ListNode head) {
+        ListNode temp = head;
         if (head == null) return null;
         ListNode slow = head;
-        ListNode fast = head.next;
-        while (slow != null && fast != null && fast.next != null) {
-            if (slow == fast) break;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
+            if (slow == fast) {
+                while (temp != slow) {
+                    temp = temp.next;
+                    slow = slow.next;
+                }
+                return temp;
+            }
         }
-        if (slow != fast) return null;
-        ListNode p = new ListNode(0);
-        p.next = head;
-        while (p != slow) {
-            p = p.next;
-            assert slow != null;
-            slow = slow.next;
-        }
-        return p;
+        return null;
     }
 }
