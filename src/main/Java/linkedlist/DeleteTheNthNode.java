@@ -1,4 +1,5 @@
 package linkedlist;
+
 //removeNthFromEnd
 public class DeleteTheNthNode {
 
