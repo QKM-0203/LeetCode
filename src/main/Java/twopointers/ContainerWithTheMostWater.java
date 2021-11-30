@@ -3,7 +3,7 @@ package twopointers;
 /**
  * 盛水最多的容器
  */
-public class Hot11 {
+public class ContainerWithTheMostWater {
     public int maxArea(int[] height) {
         int res = 0;
         int i = 0;
