@@ -3,7 +3,7 @@ package chart;
 /**
  * 岛屿数量
  */
-public class Hot200 {
+public class NumberOfLSLands {
     char t = 'a';
 
     public int numIslands(char[][] grid) {
