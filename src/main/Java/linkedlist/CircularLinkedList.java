@@ -1,8 +1,6 @@
 package linkedlist;
 /**
- * CircularLinkedList
- * <p>when finding the node where the fast and slow nodes meet, the ring entrance is obtained by equal
- * distances from the head node to the ring entrance and from the meeting node to the ring entrance</p>
+ * 思路：当找到快速和慢速节点相遇的节点时，通过相等的方式获得环形入口，从头部节点到环形入口以及从相遇节点到环形入口的距离是相等的
  */
 public class CircularLinkedList {
     public ListNode detectCycle(ListNode head) {
