@@ -16,6 +16,14 @@ public class InvertsTheElementsOfAString {
         return stringBuilder.toString();
     }
 
+    /**
+     * 输入：s = "the sky is blue"
+     * 输出："blue is sky the"
+     * 思路：去除多余的的空格，然后将字符串整体反转，最后每个单词在反转就可以
+     * 时间复杂度：去重多余的空格(中间的空格)是o(n){@link array.RemoveNumber})，然后reverse就行是on(n/2)
+     * 最终时间复杂度是o(n)
+     * 空间复杂度：没有新开辟空间所以是o(1)
+     * */
     public static String DoubleReverseWords(String s) {
         String trim = s.trim();
         char[] chars = trim.toCharArray();
@@ -40,9 +48,5 @@ public class InvertsTheElementsOfAString {
         }
         ReverseStringII.reverse(chars1, temp, index - 1);
         return new String(chars1);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(DoubleReverseWords("a good   example"));
     }
 }
