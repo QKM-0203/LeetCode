@@ -2,6 +2,9 @@ package array;
 
 import java.util.Arrays;
 
+/**
+ * @see <a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/">https://leetcode-cn.com/problems/minimum-size-subarray-sum/</a>
+ */
 public class MinSubArrayLen {
     //has three point not pass,because of when equal to and greater than, take first
     public static int minSubArrayLenFail(int target, int[] nums) {

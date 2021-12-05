@@ -1,5 +1,8 @@
 package array;
 
+/**
+ * @see <a href="https://leetcode-cn.com/problems/binary-search/">https://leetcode-cn.com/problems/binary-search/</a>
+ */
 public class Dichotomy {
     public static int dichotomyRecursion(int[] array, int i, int j, int target) {
         if (i > j) {

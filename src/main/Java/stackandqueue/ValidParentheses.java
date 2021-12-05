@@ -1,7 +1,10 @@
-package StackAndQueue;
+package stackandqueue;
 
 import java.util.Stack;
 
+/**
+ * @see <a href="https://leetcode-cn.com/problems/valid-parentheses/">https://leetcode-cn.com/problems/valid-parentheses/</a>
+ */
 public class ValidParentheses {
     public boolean isValid(String s) {
         if (s.length() % 2 == 0) {

@@ -1,5 +1,8 @@
 package array;
 
+/**
+ * @see <a href="https://leetcode-cn.com/problems/remove-element/">https://leetcode-cn.com/problems/remove-element/</a>
+ */
 public class RemoveNumber {
 
     /**
