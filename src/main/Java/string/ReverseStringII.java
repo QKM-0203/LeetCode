@@ -16,9 +16,8 @@ public class ReverseStringII {
         return new String(chars);
 
     }
-
     // 翻转函数
-    public void reverse(char[] ch, int i, int j) {
+    public static void reverse(char[] ch, int i, int j) {
         for (; i < j; i++, j--) {
             char temp = ch[i];
             ch[i] = ch[j];
