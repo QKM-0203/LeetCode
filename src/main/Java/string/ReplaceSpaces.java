@@ -1,7 +1,7 @@
 package string;
 
 public class ReplaceSpaces {
-    //two points
+    //two points,resize space and from end start
     public static String replaceSpace(String s) {
         StringBuilder stringBuilder = new StringBuilder(s);
         for (int i = 0; i < s.length(); i++) {
