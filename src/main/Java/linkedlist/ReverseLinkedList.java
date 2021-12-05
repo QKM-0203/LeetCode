@@ -25,4 +25,20 @@ public class ReverseLinkedList {
         tempHead.next = null;
         return tempHead;
     }
+
+    public static ListNode reverseListSimple(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode newHead = head;
+        ListNode tempHead = head;
+        head = head.next;
+        while (head != null) {
+            tempHead.next = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = tempHead.next;
+        }
+        return newHead;
+    }
 }
