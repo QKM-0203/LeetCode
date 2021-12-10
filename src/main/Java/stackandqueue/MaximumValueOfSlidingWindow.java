@@ -1,6 +1,7 @@
 package stackandqueue;
 
-import java.util.Comparator;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.PriorityQueue;
 
 /**
@@ -14,11 +15,9 @@ public class MaximumValueOfSlidingWindow {
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
-        PriorityQueue<int[]> queue = new PriorityQueue<int[]>(new Comparator<int[]>() {
-            public int compare(int[] pair1, int[] pair2) {
-                //将优先队列转换成大顶堆
-                return pair1[0] != pair2[0] ? pair2[0] - pair1[0] : pair2[1] - pair1[1];
-            }
+        PriorityQueue<int[]> queue = new PriorityQueue<>((pair1, pair2) -> {
+            //将优先队列转换成大顶堆
+            return pair1[0] != pair2[0] ? pair2[0] - pair1[0] : pair2[1] - pair1[1];
         });
         for (int i = 0; i < k; ++i) {
             queue.offer(new int[]{nums[i], i});
@@ -36,5 +35,36 @@ public class MaximumValueOfSlidingWindow {
         }
         return result;
 
+    }
+
+    /**
+     * 单调队列
+     * 时间复杂度:o(n)
+     * 空间复杂度:o(k)
+     */
+    public static int[] monotoneQueue(int[] nums, int k) {
+        int n = nums.length;
+        Deque<Integer> deque = new ArrayDeque<>();
+        for (int i = 0; i < k; i++) {
+            while (!deque.isEmpty() && nums[i] > nums[deque.peekLast()]) {
+                deque.pollLast();
+            }
+            deque.addLast(i);
+        }
+        int[] result = new int[n - k + 1];
+        result[0] = nums[deque.peekFirst()];
+        for (int i = k; i < n; i++) {
+            //弹出所有比nums[deque.peekLast()]小的
+            while (!deque.isEmpty() && nums[i] > nums[deque.peekLast()]) {
+                deque.pollLast();
+            }
+            deque.addLast(i);
+            //利用下标可以判断是否在滑动窗口的左侧，换成等于也可以
+            while (deque.peekFirst() <= i - k) {
+                deque.pollFirst();
+            }
+            result[i - k + 1] = nums[deque.peekFirst()];
+        }
+        return result;
     }
 }
